@@ -1,9 +1,9 @@
 equipos:
-  - nombre: Router Central
-    ip: 192.168.1.1
-    marca: Cisco
-    modelo: RV340
-  - nombre: Switch Oficina
-    ip: 192.168.1.2
-    marca: HP
-    modelo: 1920S
+- ip: 192.168.1.2
+  marca: HP
+  modelo: 1920S
+  nombre: Switch Oficina
+- ip: 192.165..22
+  marca: ZTE
+  modelo: C300
+  nombre: TEST

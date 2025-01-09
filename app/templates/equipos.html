@@ -1,27 +1,31 @@
 {% extends "base.html" %}
-
 {% block content %}
 <h1>Gestión de Equipos</h1>
 
-<h2>Agregar Equipo</h2>
-<form action="/agregar_equipo" method="POST">
-    <label for="nombre">Nombre del Equipo:</label>
-    <input type="text" name="nombre" required>
-    <label for="ip">Dirección IP:</label>
-    <input type="text" name="ip" required>
-    <label for="marca">Marca:</label>
-    <input type="text" name="marca" required>
-    <label for="modelo">Modelo:</label>
-    <input type="text" name="modelo" required>
+<h2>Agregar Nuevo Equipo</h2>
+<form action="{{ url_for('agregar_equipo') }}" method="POST">
+    Sysname: <input type="text" name="sysname" required>
+    Nombre: <input type="text" name="nombre" required>
+    IP: <input type="text" name="ip" required>
+    Marca: <input type="text" name="marca" required>
+    Modelo: <input type="text" name="modelo" required>
+    Localidad: <input type="text" name="localidad" required>
+    Protocolo: <input type="text" name="protocolo" required>
+    Puerto: <input type="text" name="puerto" required>
+    Script: <input type="text" name="script" required>
     <button type="submit">Agregar Equipo</button>
 </form>
 
 <h2>Lista de Equipos</h2>
 <ul>
     {% for equipo in equipos %}
-        <li>{{ equipo.nombre }} - {{ equipo.ip }} - {{ equipo.marca }} - {{ equipo.modelo }}
-            <a href="/eliminar_equipo/{{ loop.index0 }}">Eliminar</a>
-        </li>
+    <li>
+        {{ equipo.sysname }} - {{ equipo.nombre }} - {{ equipo.ip }} 
+        <form action="{{ url_for('eliminar_equipo', sysname=equipo.sysname.replace(':','-')) }}" method="POST" style="display:inline;">
+            Motivo: <input type="text" name="motivo" required>
+            <button type="submit">Eliminar</button>
+        </form>
+    </li>
     {% endfor %}
 </ul>
 {% endblock %}

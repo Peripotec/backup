@@ -1,0 +1,16 @@
+sysname: "AC:ZTEC300-RAFZTE4-RAF0R1"
+nombre: "OLT Central"
+ip: "192.168.1.10"
+marca: "ZTE"
+modelo: "C300"
+localidad: "Rafaela"
+script: "zte_olt.sh"
+activo: true
+protocolo: "ssh"
+puerto: 22
+credenciales:
+  usuario: "admin"
+  contraseña: "password"
+retencion:
+  modo: "automatica"
+  tiempo: 30  # Días de retención

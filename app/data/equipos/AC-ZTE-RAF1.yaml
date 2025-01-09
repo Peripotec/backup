@@ -1,0 +1,9 @@
+sysname: AC:ZTEC300-RAFZTE4-RAF0R1
+nombre: Router Central
+ip: 192.168.1.1
+marca: ZTE
+modelo: C300
+localidad: Rafaela
+protocolo: SSH
+puerto: 22
+script: backup_script.sh
