@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Gestión de Equipos</h1>
+
+<h2>Agregar Equipo</h2>
+<form action="/agregar_equipo" method="POST">
+    <label for="nombre">Nombre del Equipo:</label>
+    <input type="text" name="nombre" required>
+    <label for="ip">Dirección IP:</label>
+    <input type="text" name="ip" required>
+    <label for="marca">Marca:</label>
+    <input type="text" name="marca" required>
+    <label for="modelo">Modelo:</label>
+    <input type="text" name="modelo" required>
+    <button type="submit">Agregar Equipo</button>
+</form>
+
+<h2>Lista de Equipos</h2>
+<ul>
+    {% for equipo in equipos %}
+        <li>{{ equipo.nombre }} - {{ equipo.ip }} - {{ equipo.marca }} - {{ equipo.modelo }}
+            <a href="/eliminar_equipo/{{ loop.index0 }}">Eliminar</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}
